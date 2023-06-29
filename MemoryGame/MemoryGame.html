@@ -1,0 +1,87 @@
+<!--Jeu de Memory :
+Description : Créez un jeu de Memory où les utilisateurs doivent retourner des cartes et trouver les paires correspondantes.
+Objectifs d'apprentissage : Utilisation du DOM pour créer et manipuler les éléments HTML, gestion des événements,
+utilisation de l'algorithme pour mélanger les cartes, utilisation du localStorage pour enregistrer le score.
+Conseils supplémentaires : Ajoutez des animations lors du retournement des cartes,
+une minuterie pour chronométrer le temps de jeu et un système de classement pour les scores. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="/MemoryGame/style.css">
+    <link rel="icon" type="image/png" href="/MemoryGame/Images/icon.png">
+</head>
+
+<body>
+    <header>
+        <input type="button" onclick="location.href='http://127.0.0.1:5500/main.html';" value="< retour"/ id="bouton">
+        <h1>MEMORY GAME</h1>
+    </header>
+
+    <footer id="body">
+        
+
+        <section class="memory-game">
+            <div class="memory-card" data-framework="Freezer">
+            <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Freezer">
+                <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Goku">
+                <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Goku">
+            <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Gohan">
+            <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Gohan">
+            <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Cell">
+            <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Cell">
+                <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Zeno">
+            <img class="front-face" src="./Images/Zeno.webp" alt="Zeno card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Zeno">
+                <img class="front-face" src="./Images/Zeno.webp" alt="Zeno card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Vegeta">
+            <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+            <div class="memory-card" data-framework="Vegeta">
+            <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+      </section>
+    </footer>
+    
+
+      <script src="/MemoryGame/script.js"></script>
+</body>
+</html>
