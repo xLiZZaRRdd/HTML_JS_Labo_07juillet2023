@@ -3,6 +3,31 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let currentScore = 0;
+let scoreMultiplier = 1;
+let timer = 0;
+let interval;
+let totalPairs = cards.length / 2;
+let matchedPairs = 0;
+
+function startTimer() {
+  interval = setInterval(() => {
+    timer += 1;
+    currentScore -= 1;
+
+    if(currentScore <= 0){
+      currentScore = 0;
+    }
+
+    document.getElementById('score').textContent = currentScore;
+    document.getElementById('timer').textContent = timer;
+  }, 1000);
+  
+}
+
+function stopTimer() {
+  clearInterval(interval);
+}
 
 function flipCard() {
   if (lockBoard) return;
@@ -14,7 +39,12 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
-
+    
+    // Commencer le timer au premier clic seulement
+    if (timer === 0) {
+      startTimer();
+    }
+    
     return;
   }
 
@@ -24,18 +54,43 @@ function flipCard() {
   checkForMatch();
 }
 
-function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
-  isMatch ? disableCards() : unflipCards();
-}
-
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
+  currentScore += 10 * scoreMultiplier;
+  scoreMultiplier++;
+  document.getElementById('score').textContent = currentScore;
+  
+  let bestScore = localStorage.getItem('bestScore');
+  
+  if (bestScore === null || currentScore < parseInt(bestScore) || isNaN(parseInt(bestScore))) {
+    localStorage.setItem('bestScore', currentScore);
+    document.getElementById('best-score').textContent = currentScore;
+  }else {
+    document.getElementById('best-score').textContent = bestScore;
+  }
+  
+  
   resetBoard();
 }
+
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  if (isMatch) {
+    disableCards();
+    matchedPairs++;
+
+    if (matchedPairs === totalPairs) {
+      stopTimer();
+      // Ici, vous pouvez effectuer d'autres actions lorsque toutes les paires ont été trouvées
+    }
+  } else {
+    unflipCards();
+  }
+}
+
 
 function unflipCards() {
   lockBoard = true;
@@ -43,7 +98,6 @@ function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
   }, 1500);
 }
@@ -51,13 +105,56 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+  scoreMultiplier = 1;
 }
 
+
 (function shuffle() {
+  
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
+
+function restartGame() {
+  // Réinitialiser les variables
+  hasFlippedCard = false;
+  lockBoard = false;
+  firstCard = null;
+  secondCard = null;
+  currentScore = 0;
+  timer = 0;
+  scoreMultiplier = 1;
+  matchedPairs = 0;
+  
+  // Réinitialiser les affichages
+  document.getElementById('score').textContent = currentScore;
+  document.getElementById('timer').textContent = timer;
+  
+  // Réinitialiser les cartes
+  cards.forEach(card => {
+    card.classList.remove('flip');
+    card.addEventListener('click', flipCard);
+  });
+  
+  // Mélanger les cartes
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+  
+  // Réinitialiser le meilleur score
+  let bestScore = localStorage.getItem('bestScore');
+  if (bestScore !== null) {
+    document.getElementById('best-score').textContent = bestScore;
+  }
+  
+  // Arrêter le timer s'il est en cours
+  if (matchedPairs === totalPairs) {
+    stopTimer();
+    // Ici, vous pouvez effectuer d'autres actions lorsque toutes les paires ont été trouvées
+  }
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));

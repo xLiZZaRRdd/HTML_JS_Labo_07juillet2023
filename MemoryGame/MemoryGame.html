@@ -21,63 +21,79 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
         <h1>MEMORY GAME</h1>
     </header>
 
+    <p>Temps : <span id="timer"></span> secondes</p>
+    <p>Score actuel : <span id="score"></span></p>
+    <p>Meilleur score :  <span id="best-score"></span></p>
+    <button onclick="restartGame()">Recommencer</button>
+
+
+      
+
     <footer id="body">
         
 
         <section class="memory-game">
-            <div class="memory-card" data-framework="Freezer">
-            <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
-            </div>
+
             <div class="memory-card" data-framework="Freezer">
                 <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+
+            <div class="memory-card" data-framework="Freezer">
+                <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
             <div class="memory-card" data-framework="Goku">
                 <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
+
             <div class="memory-card" data-framework="Goku">
-            <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
             <div class="memory-card" data-framework="Gohan">
-            <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
+
             <div class="memory-card" data-framework="Gohan">
-            <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
-            <div class="memory-card" data-framework="Cell">
-            <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
-            </div>
             <div class="memory-card" data-framework="Cell">
                 <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+
+            <div class="memory-card" data-framework="Cell">
+                <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
-            <div class="memory-card" data-framework="Zeno">
-            <img class="front-face" src="./Images/Zeno.webp" alt="Zeno card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
-            </div>
             <div class="memory-card" data-framework="Zeno">
                 <img class="front-face" src="./Images/Zeno.webp" alt="Zeno card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+
+            <div class="memory-card" data-framework="Zeno">
+                <img class="front-face" src="./Images/Zeno.webp" alt="Zeno card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
             <div class="memory-card" data-framework="Vegeta">
-            <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
+
             <div class="memory-card" data-framework="Vegeta">
-            <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
-            <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+                <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
+
       </section>
     </footer>
     
