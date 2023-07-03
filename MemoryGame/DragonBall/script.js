@@ -70,7 +70,6 @@ function disableCards() {
   secondCard.removeEventListener('click', flipCard);
 
   currentScore += 10 * scoreMultiplier;
-  scoreMultiplier++;
   document.getElementById('score').textContent = currentScore;
 
   if (currentScore > getBestScore()) {
@@ -86,6 +85,7 @@ function checkForMatch() {
   if (isMatch) {
     disableCards();
     matchedPairs++;
+    scoreMultiplier++;
 
     if (matchedPairs === totalPairs) {
       stopTimer();
@@ -93,6 +93,7 @@ function checkForMatch() {
     }
   } else {
     unflipCards();
+    scoreMultiplier = 1;
   }
 }
 
@@ -110,7 +111,6 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
-  scoreMultiplier = 1;
 }
 
 
