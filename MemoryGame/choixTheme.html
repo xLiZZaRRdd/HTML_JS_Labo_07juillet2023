@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game : Choix du thème</title>
+    <link rel="stylesheet" href="styleTheme.css">
+</head>
+
+<body background="./themeback.jpg">
+
+    <input type="button" onclick="location.href='http://127.0.0.1:5500/main.html';" value="< retour"/ id="boutonRetour">
+
+  <header>
+    <h1 style="text-align: center; margin-top: 450px;";>Memory Game : Theme Selection</h1>
+    <div class="theme-selection">
+      <label for="theme">Choisir un thème :</label>
+      <select id="theme" onchange="updateStartButton()">
+        <option value="dragon-ball">Dragon Ball</option>
+        <option value="one-piece">Monopoly</option>
+      </select>
+      <button id="start-button" onclick="startGame()">Commencer</button>
+    </div>
+  </header>
+
+  <script src="scriptTheme.js"></script>
+
+</body>
+
+</html>

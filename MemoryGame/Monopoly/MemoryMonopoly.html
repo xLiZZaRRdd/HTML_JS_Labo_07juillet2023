@@ -1,0 +1,106 @@
+<!--Jeu de Memory :
+Description : Créez un jeu de Memory où les utilisateurs doivent retourner des cartes et trouver les paires correspondantes.
+Objectifs d'apprentissage : Utilisation du DOM pour créer et manipuler les éléments HTML, gestion des événements,
+utilisation de l'algorithme pour mélanger les cartes, utilisation du localStorage pour enregistrer le score.
+Conseils supplémentaires : Ajoutez des animations lors du retournement des cartes,
+une minuterie pour chronométrer le temps de jeu et un système de classement pour les scores. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - Monopoly</title>
+    <link rel="stylesheet" href="/MemoryGame/Monopoly/style.css">
+    <link rel="icon" type="image/png" href="/MemoryGame/Monopoly/Images/monsieurmono.PNG">
+</head>
+
+<body background="Images/monopolyBackground.jpg" style="background-size: cover; background-position: center;">
+
+    <header>
+        <input type="button" onclick="location.href='http://127.0.0.1:5500/MemoryGame/choixTheme.html';" value="< retour"/ id="boutonRetour">
+        <h1>MEMORY GAME V: MONOPOLY</h1>
+    </header>
+
+    <div id="boutonDiv">
+        
+    </div>
+
+    <footer id="body">
+   
+        <div id="scores">
+            <p>Temps : <span id="timer"></span> secondes</p><br>
+            <p>Score actuel : <span id="score"></span> points</p><br>
+            <p>Meilleur score :  <span id="best-score"> points</span></p>
+            <button id="boutonRestart" onclick="restartGame()"><img src="./Images/restartButton.jpg" alt="" width="100"> RESTART</button>
+        </div>
+
+        <section class="memory-game">
+
+            <div class="memory-card" data-framework="Failure">
+                <img class="front-face" src="./Images/Carte1.PNG" alt="Carte 1" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Failure">
+                <img class="front-face" src="./Images/Carte1.PNG" alt="Carte 1" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+        
+            <div class="memory-card" data-framework="Mindset">
+                <img class="front-face" src="./Images/Carte2.PNG" alt="Carte 2" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Mindset">
+                <img class="front-face" src="./Images/Carte2.PNG" alt="Carte 2" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+        
+            <div class="memory-card" data-framework="Success">
+                <img class="front-face" src="./Images/Carte3.PNG" alt="Carte 3" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Success">
+                <img class="front-face" src="./Images/Carte3.PNG" alt="Carte 3" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+        
+            <div class="memory-card" data-framework="Persistence">
+                <img class="front-face" src="./Images/Carte4.PNG" alt="Carte 4" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Persistence">
+                <img class="front-face" src="./Images/Carte4.PNG" alt="Carte 4" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+        
+            <div class="memory-card" data-framework="Regret">
+                <img class="front-face" src="./Images/Carte5.PNG" alt="Carte 5" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Regret">
+                <img class="front-face" src="./Images/Carte5.PNG" alt="Carte 5" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Vision">
+                <img class="front-face" src="./Images/Carte6.PNG" alt="Carte 6" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+            <div class="memory-card" data-framework="Vision">
+                <img class="front-face" src="./Images/Carte6.PNG" alt="Carte 6" />
+                <img class="back-face" src="./Images/backcard.jpg" alt="Backcard" />
+            </div>
+
+      </section>
+    </footer>
+    
+
+      <script src="/MemoryGame/Monopoly/script.js"></script>
+</body>
+</html>

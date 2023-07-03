@@ -10,6 +10,18 @@ let interval;
 let totalPairs = cards.length / 2;
 let matchedPairs = 0;
 
+const bestScoreElement = document.getElementById('best-score-dbz');
+const bestScore = getBestScore();
+bestScoreElement.textContent = bestScore + ' points';
+
+function getBestScore() {
+  return localStorage.getItem('bestScoreDbz') || 0;
+}
+
+function updateBestScore(score) {
+  localStorage.setItem('bestScoreDbz', score);
+}
+
 function startTimer() {
   interval = setInterval(() => {
     timer += 1;
@@ -22,7 +34,6 @@ function startTimer() {
     document.getElementById('score').textContent = currentScore;
     document.getElementById('timer').textContent = timer;
   }, 1000);
-  
 }
 
 function stopTimer() {
@@ -57,20 +68,14 @@ function flipCard() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+
   currentScore += 10 * scoreMultiplier;
   scoreMultiplier++;
   document.getElementById('score').textContent = currentScore;
-  
-  let bestScore = localStorage.getItem('bestScore');
-  
-  if (bestScore === null || currentScore < parseInt(bestScore) || isNaN(parseInt(bestScore))) {
-    localStorage.setItem('bestScore', currentScore);
-    document.getElementById('best-score').textContent = currentScore;
-  }else {
-    document.getElementById('best-score').textContent = bestScore;
+
+  if (currentScore > getBestScore()) {
+    updateBestScore(currentScore);
   }
-  
-  
   resetBoard();
 }
 
@@ -127,6 +132,10 @@ function restartGame() {
   timer = 0;
   scoreMultiplier = 1;
   matchedPairs = 0;
+
+  const bestScoreElement = document.getElementById('best-score-dbz');
+  const bestScore = getBestScore();
+  bestScoreElement.textContent = bestScore + ' points';
   
   // Réinitialiser les affichages
   document.getElementById('score').textContent = currentScore;
@@ -143,12 +152,6 @@ function restartGame() {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
-  
-  // Réinitialiser le meilleur score
-  let bestScore = localStorage.getItem('bestScore');
-  if (bestScore !== null) {
-    document.getElementById('best-score').textContent = bestScore;
-  }
   
   // Arrêter le timer s'il est en cours
   if (matchedPairs === totalPairs) {

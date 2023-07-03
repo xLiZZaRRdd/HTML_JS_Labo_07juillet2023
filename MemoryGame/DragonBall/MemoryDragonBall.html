@@ -10,27 +10,30 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="/MemoryGame/style.css">
-    <link rel="icon" type="image/png" href="/MemoryGame/Images/icon.png">
+    <title>Memory Game - Dragon Ball</title>
+    <link rel="stylesheet" href="/MemoryGame/DragonBall/style.css">
+    <link rel="icon" type="image/png" href="/MemoryGame/DragonBall/Images/icon.png">
 </head>
 
-<body>
+<body background="Images/dbzBackground.jpg">
+
     <header>
-        <input type="button" onclick="location.href='http://127.0.0.1:5500/main.html';" value="< retour"/ id="bouton">
-        <h1>MEMORY GAME</h1>
+        <input type="button" onclick="location.href='http://127.0.0.1:5500/MemoryGame/choixTheme.html';" value="< retour"/ id="boutonRetour">
+        <h1>MEMORY GAME V: DRAGON BALL</h1>
     </header>
 
-    <p>Temps : <span id="timer"></span> secondes</p>
-    <p>Score actuel : <span id="score"></span></p>
-    <p>Meilleur score :  <span id="best-score"></span></p>
-    <button onclick="restartGame()">Recommencer</button>
-
-
-      
+    <div id="boutonDiv">
+        
+    </div>
 
     <footer id="body">
-        
+   
+        <div id="scores">
+            <p>Temps : <span id="timer"></span> secondes</p><br>
+            <p>Score actuel : <span id="score"></span> points</p><br>
+            <p>Meilleur score :  <span id="best-score-dbz"> points</span></p>
+            <button id="boutonRestart" onclick="restartGame()"><img src="./Images/restartButton.jpg" alt="" width="100%">RESTART</button>
+        </div>
 
         <section class="memory-game">
 
@@ -98,6 +101,6 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
     </footer>
     
 
-      <script src="/MemoryGame/script.js"></script>
+      <script src="/MemoryGame/DragonBall/script.js"></script>
 </body>
 </html>

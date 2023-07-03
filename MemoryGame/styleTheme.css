@@ -1,0 +1,11 @@
+.theme-selection
+{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+  
+.theme-selection label, .theme-selection select, .theme-selection button
+{
+    margin-right: 10px;
+}
