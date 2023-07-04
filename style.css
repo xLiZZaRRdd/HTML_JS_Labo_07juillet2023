@@ -140,3 +140,17 @@
 .button:hover span:nth-child(4 ) {
   bottom: 50%;
 }
+
+footer
+{
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Socials a /*Séparer les images des réseaux en bas du site*/
+{ 
+  margin-right: 20px;
+}

@@ -27,12 +27,15 @@ function startTimer() {
     timer += 1;
     currentScore -= 1;
 
-    if(currentScore <= 0){
+    if (currentScore <= 0) {
       currentScore = 0;
     }
 
+    let minutes = Math.floor(timer / 60);
+    let seconds = timer % 60;
+
     document.getElementById('score').textContent = currentScore;
-    document.getElementById('timer').textContent = timer;
+    document.getElementById('timer').textContent = `${minutes} m ${seconds} s`;
   }, 1000);
 }
 

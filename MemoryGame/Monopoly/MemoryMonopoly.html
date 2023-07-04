@@ -15,7 +15,7 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
     <link rel="icon" type="image/png" href="/MemoryGame/Monopoly/Images/monsieurmono.PNG">
 </head>
 
-<body background="Images/monopolyBackground.jpg" style="background-size: cover; background-position: center;">
+<body background="Images/monopolyBackground.jpg" style="background-size: cover; background-position: center; overflow: hidden;">
 
     <header>
         <input type="button" onclick="location.href='http://127.0.0.1:5500/MemoryGame/choixTheme.html';" value="< retour"/ id="boutonRetour">
@@ -29,7 +29,7 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
     <footer id="body">
    
         <div id="scores">
-            <p>Temps : <span id="timer"></span> secondes</p><br>
+            <p>Temps : <span id="timer"></span></p><br>
             <p>Score actuel : <span id="score"></span> points</p><br>
             <p>Meilleur score :  <span id="best-score"> points</span></p>
             <button id="boutonRestart" onclick="restartGame()"><img src="./Images/restartButton.jpg" alt="" width="100"> RESTART</button>

@@ -15,7 +15,7 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
     <link rel="icon" type="image/png" href="/MemoryGame/DragonBall/Images/icon.png">
 </head>
 
-<body background="Images/dbzBackground.jpg">
+<body background="Images/dbzBackground.jpg" style="overflow: hidden;">
 
     <header>
         <input type="button" onclick="location.href='http://127.0.0.1:5500/MemoryGame/choixTheme.html';" value="< retour"/ id="boutonRetour">
@@ -29,7 +29,7 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
     <footer id="body">
    
         <div id="scores">
-            <p>Temps : <span id="timer"></span> secondes</p><br>
+            <p>Temps : <span id="timer"></span></p><br>
             <p>Score actuel : <span id="score"></span> points</p><br>
             <p>Meilleur score :  <span id="best-score-dbz"> points</span></p>
             <button id="boutonRestart" onclick="restartGame()"><img src="./Images/restartButton.jpg" alt="" width="100%">RESTART</button>
@@ -37,43 +37,43 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
 
         <section class="memory-game">
 
-            <div class="memory-card" data-framework="Freezer">
-                <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
+            <div class="memory-card" data-framework="Vegeta">
+                <img class="front-face" src="./Images/Vegeta.jpg" alt="Vegeta card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
 
-            <div class="memory-card" data-framework="Freezer">
-                <img class="front-face" src="./Images/DBS_Broly_Frieza_Render.webp" alt="Freezer card" />
+            <div class="memory-card" data-framework="Vegeta">
+                <img class="front-face" src="./Images/Vegeta.jpg" alt="Vegeta card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+        
+            <div class="memory-card" data-framework="Beerus">
+                <img class="front-face" src="./Images/Beerus.jpg" alt="Beerus card" />
+                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
+            </div>
+
+            <div class="memory-card" data-framework="Beerus">
+                <img class="front-face" src="./Images/Beerus.jpg" alt="Beerus card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
             <div class="memory-card" data-framework="Goku">
-                <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
+                <img class="front-face" src="./Images/goku.jpg" alt="Goku card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
 
             <div class="memory-card" data-framework="Goku">
-                <img class="front-face" src="./Images/goku.webp" alt="Goku card" />
+                <img class="front-face" src="./Images/goku.jpg" alt="Goku card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
-            <div class="memory-card" data-framework="Gohan">
-                <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
+            <div class="memory-card" data-framework="Trunks">
+                <img class="front-face" src="./Images/Trunks.webp" alt="Trunks card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
 
-            <div class="memory-card" data-framework="Gohan">
-                <img class="front-face" src="./Images/Gohan_anime_profile_2.webp" alt="Gohan card" />
-                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
-            </div>
-        
-            <div class="memory-card" data-framework="Cell">
-                <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
-                <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
-            </div>
-
-            <div class="memory-card" data-framework="Cell">
-                <img class="front-face" src="./Images/Cell_Dragon_Ball_Z_Episode_177.webp" alt="Cell card" />
+            <div class="memory-card" data-framework="Trunks">
+                <img class="front-face" src="./Images/Trunks.webp" alt="Trunks card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
@@ -87,13 +87,13 @@ une minuterie pour chronométrer le temps de jeu et un système de classement po
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
         
-            <div class="memory-card" data-framework="Vegeta">
-                <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+            <div class="memory-card" data-framework="Pan">
+                <img class="front-face" src="./Images/Pan.jpg" alt="Pan card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
 
-            <div class="memory-card" data-framework="Vegeta">
-                <img class="front-face" src="./Images/vegeta.webp" alt="Vegeta card" />
+            <div class="memory-card" data-framework="Pan">
+                <img class="front-face" src="./Images/Pan.jpg" alt="Pan card" />
                 <img class="back-face" src="./Images/doscarte.png" alt="DBZ Card" />
             </div>
 
